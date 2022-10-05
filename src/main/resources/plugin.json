@@ -1,10 +1,10 @@
 {
-  "name": "PluginTemplate",
-  "description": "The Grasscutter example plugin, which uses Maven.",
-  "version": "1.0.2-dev",
-  "authors": [ "KingRainbow44" ],
+  "name": "Nuzlocke",
+  "description": "The best plugin ever.",
+  "version": "one and oni",
+  "authors": [ "Penelopeep" ],
   
-  "mainClass": "xyz.grasscutters.pltm.PluginTemplate",
+  "mainClass": "pene.gc.nuzlocke.NuzlockePlugin",
   
   "comments": [
     "This comments block doesn't need to be in your plugin.json.",
