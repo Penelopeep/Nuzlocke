@@ -7,14 +7,18 @@ import emu.grasscutter.command.commands.TeamCommand;
 import emu.grasscutter.database.DatabaseManager;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.player.Player;
+import pene.gc.nuzlocke.proto.PacketAvatarDelNotify;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
+
 public class Nuzlocke {
     public static void NuzlockeFunction(Player targetPlayer, Avatar deadAvatar) {
         try {
+            long avatarGuid = targetPlayer.getTeamManager().getCurrentCharacterGuid(); //Can't loose it earlier
+
             List<String> args = new ArrayList<>();
             args.add("remove");
             args.add(String.valueOf(targetPlayer.getTeamManager().getCurrentCharacterIndex()+1));
@@ -23,6 +27,7 @@ public class Nuzlocke {
             Tc.execute(targetPlayer, targetPlayer, args);
 
             DeleteResult result = DatabaseManager.getGameDatastore().delete(deadAvatar);
+            targetPlayer.getScene().broadcastPacket(new PacketAvatarDelNotify(avatarGuid));
 
             if(result.wasAcknowledged()){
                 Grasscutter.getLogger().info(String.format("%s was deleted", deadAvatar.getAvatarData().getName()));
