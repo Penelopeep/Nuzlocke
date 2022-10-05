@@ -2,7 +2,7 @@
 This plugin aim to bring legendary death = out challenge to Grasscutter.
 I recommend using this plugin with other difficulty increasing plugins like [MobWave](https://github.com/NotThorny/MobWave)
 
-
+#### Use with caution, for some reason it can break account
 https://user-images.githubusercontent.com/81880849/194171884-22342f20-244e-4351-9d9c-673c37404a2a.mp4
 
 
