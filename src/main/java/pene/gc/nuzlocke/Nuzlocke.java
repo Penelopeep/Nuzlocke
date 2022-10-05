@@ -17,8 +17,12 @@ import java.util.List;
 public class Nuzlocke {
     public static void NuzlockeFunction(Player targetPlayer, Avatar deadAvatar) {
         try {
-            long avatarGuid = targetPlayer.getTeamManager().getCurrentCharacterGuid(); //Can't loose it earlier
-
+            long avatarGuid = targetPlayer.getTeamManager().getCurrentCharacterGuid(); //I can't lose it later
+            if(targetPlayer.getTeamManager().getCurrentTeamInfo().size() == 1){
+                //The game is handling it some other way but I'll keep it as a second barrier
+                Grasscutter.getLogger().info("You lost, but I can't do it to you because GC might broke in meantime :)");
+                return;
+            }
             List<String> args = new ArrayList<>();
             args.add("remove");
             args.add(String.valueOf(targetPlayer.getTeamManager().getCurrentCharacterIndex()+1));
