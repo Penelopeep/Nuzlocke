@@ -1,3 +1,5 @@
+Don't use it, old protos :skull:
+
 # Nuzlocke Challenge
 This plugin aim to bring legendary death = out challenge to Grasscutter.
 I recommend using this plugin with other difficulty increasing plugins like [MobWave](https://github.com/NotThorny/MobWave)
